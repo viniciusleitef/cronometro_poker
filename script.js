@@ -14,7 +14,7 @@ if(localStorage.segundo){
 }
 
 function start(){
-	pausou = setInterval(counter,1);
+	pausou = setInterval(counter,1000);
 }
 
 function pause(){
