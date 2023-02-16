@@ -2,8 +2,13 @@ let segundo = 0;
 let minuto = 0;
 let hora = 0;
 let pausou;
+let audioTocado = false;
+let audioTocadoI = false;
+
+const audio = document.getElementById("alerta")
 
 const form = document.getElementById("form")
+
 
 
 if(localStorage.segundo){
@@ -21,12 +26,10 @@ form.addEventListener('submit', event =>{
 	minuto = parseInt(document.getElementById("Pminuto").value)
 	segundo = parseInt(document.getElementById("Psegundo").value)
 
-	console.log(segundo)
-	console.log(minuto)
-	console.log(hora)
-
 	escreverHora();
+	
 })
+
 
 function start(){
 	pausou = setInterval(counter,1000);
@@ -51,8 +54,31 @@ function zerar(){
 	document.getElementById("horas").innerText ="00";
 }
 
+function alertas(){
+	if(minuto !== 0){
+		if(minuto % 12 === 0 && !audioTocado){
+			audio.play()
+			audioTocado = true
+		}
+
+		if(minuto == 59 && segundo == 59){
+			audio.play()
+			audioTocado = true
+		}
+
+		if (minuto % 12 !== 0 && audioTocado) {
+			audioTocado = false;
+		}
+	}
+}
+
 function escreverHora(){
-	document.getElementById("segundos").innerText = segundo;
+	
+	if(segundo < 10){
+		document.getElementById("segundos").innerText = "0" + segundo;
+	}else{
+		document.getElementById("segundos").innerText = segundo;
+	}
 	if(minuto<10){
 		document.getElementById("minutos").innerText = "0" + minuto;
 	}else{
@@ -62,7 +88,8 @@ function escreverHora(){
 }
 
 function counter(){
-	
+	alertas();
+
 	if(segundo<10){
 		document.getElementById("segundos").innerText = "0" + segundo
 		segundo++;

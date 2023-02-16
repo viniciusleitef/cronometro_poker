@@ -48,9 +48,11 @@
 		</div>
 
 		<form action="submit" id="form">
-			<label for="hora">Hora: <input type="number" id="Phora" min="0" max="6"></label>
-			<label for="minutos">Minuto: <input type="number" id="Pminuto" min="0" max="59"></label>
-			<label for="segundos">Segundo: <input type="number" id="Psegundo" min="0" max="59"></label>
+			<div class="perguntas">
+				<label for="hora">Hora: <input value="0" type="number" id="Phora" min="0" max="6"></label>
+				<label for="minutos">Minuto: <input value="0" type="number" id="Pminuto" min="0" max="59"></label>
+				<label for="segundos">Segundo: <input value="0" type="number" id="Psegundo" min="0" max="59"></label>
+			</div>
 			<div class="botao_enviar">
 				<button>Enviar</button>
 			</div>
@@ -60,8 +62,11 @@
 	</section>
 
 	<footer>
-
+		<p>viniciusleitealves@gmail.com</p>
+		<p>+55 (83) 99107-3939</p>
 	</footer>
+
+	<audio src="intervalo.mp3" id="alerta"></audio>
 
 	<script src="script.js"></script>
 </body>
