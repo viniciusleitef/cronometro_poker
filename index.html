@@ -8,16 +8,60 @@
 	<title>Document</title>
 </head>
 <body>
-	<div class="titulo"><h1>Cronômetro para torneio de poker</h1></div>
-	<div class="cronometro">
-		<h1 id="horas">00</h1><h1>:</h1><h1 id="minutos">00</h1><h1>:</h1><h1 id="segundos">00</h1>
-	</div>
+		<header>
+			<div class="logo">
+				<a href="#home">VRpoker</a>
+			</div>
 
-	<div class="botoes">
-		<button id="iniciar" onclick="start()">Iniciar</button>
-		<button id="pausar" onclick="pause()">Pausar</button>
-		<button id="parar" onclick="stop()">Parar</button>
-	</div>
+			<nav>
+				<ul>
+					<li>
+						<a href="#home">Home</a>
+					</li>
+
+					<li>
+						<a href="#Cronometro">Cronometro</a>
+					</li>
+
+					<li>
+						<a href="#GamesBuild">GamesBuild</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<section class="main">
+			<div class="box">	
+				<div class="cronometro">
+					<h1 id="horas">00</h1><h1>:</h1><h1 id="minutos">00</h1><h1>:</h1><h1 id="segundos">00</h1>
+				</div>
+
+				<div class="botoes">
+					<button id="iniciar" onclick="start()">Iniciar</button>
+					<button id="pausar" onclick="pause()">Pausar</button>
+					<button id="parar" onclick="stop()">Parar</button>
+				</div>
+			</div>
+		</section>
+	<section class="configuração">
+		<div class="texto">
+			<h1>Configure um horário personalizado para o cronômetro</h1>
+		</div>
+
+		<form action="submit" id="form">
+			<label for="hora">Hora: <input type="number" id="Phora" min="0" max="6"></label>
+			<label for="minutos">Minuto: <input type="number" id="Pminuto" min="0" max="59"></label>
+			<label for="segundos">Segundo: <input type="number" id="Psegundo" min="0" max="59"></label>
+			<div class="botao_enviar">
+				<button>Enviar</button>
+			</div>
+		</form>
+
+		
+	</section>
+
+	<footer>
+
+	</footer>
 
 	<script src="script.js"></script>
 </body>

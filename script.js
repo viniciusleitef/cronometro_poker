@@ -1,10 +1,10 @@
 let segundo = 0;
 let minuto = 0;
 let hora = 0;
-
 let pausou;
 
-let clicks = false
+const form = document.getElementById("form")
+
 
 if(localStorage.segundo){
 	segundo = localStorage.segundo;
@@ -12,6 +12,21 @@ if(localStorage.segundo){
 	hora = localStorage.hora;	
 	escreverHora();
 }
+
+form.addEventListener('submit', event =>{
+	console.log("oi")
+	event.preventDefault()
+
+	hora = parseInt(document.getElementById("Phora").value)
+	minuto = parseInt(document.getElementById("Pminuto").value)
+	segundo = parseInt(document.getElementById("Psegundo").value)
+
+	console.log(segundo)
+	console.log(minuto)
+	console.log(hora)
+
+	escreverHora();
+})
 
 function start(){
 	pausou = setInterval(counter,1000);
@@ -45,7 +60,6 @@ function escreverHora(){
 	}
 	document.getElementById("horas").innerText = "0" + hora;
 }
-
 
 function counter(){
 	
