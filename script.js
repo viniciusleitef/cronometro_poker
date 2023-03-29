@@ -5,6 +5,9 @@ let pausou;
 let audioTocado = false;
 let nivel_blind = 1
 
+let sidebar_menu = document.getElementById("sidebar_menu")
+let clicou = false
+
 const audio = document.getElementById("alerta")
 const form = document.getElementById("form")
 const blinds = document.getElementById("blinds_values")
@@ -28,6 +31,16 @@ form.addEventListener('submit', event =>{
 	
 })
 
+
+function mostrarMenu(){
+    if(!clicou){
+        sidebar_menu.style.display = "block"
+        clicou = true
+    }else{
+        sidebar_menu.style.display = "none"
+        clicou = false
+    }
+}
 
 function start(){
 	pausou = setInterval(counter,1);
